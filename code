@@ -1,0 +1,37 @@
+#define MQ3pin 0
+#define MQ4pin 1
+#define MQ137pin 2
+#define MQ135pin 3
+#define LEDpin 13
+float sensorValue3;                      
+float sensorValue4;
+float sensorValue137;
+float sensorValue135;
+// float sum;
+
+void setup() {
+  Serial.begin(9600);                    
+  pinMode(MQ3pin, INPUT);
+  pinMode(MQ4pin, INPUT);
+  pinMode(MQ137pin, INPUT);
+  pinMode(MQ135pin, INPUT);
+  pinMode(LEDpin,OUTPUT);
+}
+
+void loop() {
+  sensorValue3 = analogRead(MQ3pin);      
+  sensorValue4 = analogRead(MQ4pin);
+  sensorValue137 = analogRead(MQ137pin);
+  sensorValue135 = analogRead(MQ135pin);
+  // sum = (sensorValue3 + sensorValue4 + sensorValue137 + sensorValue135);
+  while (true) {
+    Serial.println(sensorValue3)
+    Serial.println(sensorValue4)
+    Serial.println(sensorValue137)
+    Serial.println(sensorValue135)
+    // digitalWrite(LEDpin,HIGH);
+    // delay(sum);                           
+    // digitalWrite(LEDpin,LOW);
+    // delay(sum);       
+  }
+}
